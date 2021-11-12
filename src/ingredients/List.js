@@ -4,9 +4,8 @@ import {Api} from '../common/data/urls';
 import {useFetcher, WithSpinner} from '../common/loadingData';
 
 export const List = () => {
-    const ingredients = useFetcher(`${Api}/ingredients/`);
-    const places = useFetcher(`${Api}/places/`);
-    return <WithSpinner fetcher={{ingredients, places}} Component={Ui} />;
+    const fetcher = useFetcher(`${Api}/ingredients/`);
+    return <WithSpinner fetcher={fetcher} Component={Ui} />;
 };
 
 export const Ui = ({data}) => {
